@@ -1,7 +1,7 @@
 def fibonacci(n):
     try:
         if not isinstance(n, int):
-            raise ValueError("Error -> n must be an integer")
+            raise TypeError("Error -> n must be an integer")
         a = 0
         b = 1
         print("First", n, "Numbers")
@@ -13,6 +13,5 @@ def fibonacci(n):
         return fib_list
     except Exception as e:
         return e
-
 
 print(fibonacci(12))
