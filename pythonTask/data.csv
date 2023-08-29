@@ -1,5 +1,7 @@
-﻿emp_name,salary,dept
-joshua,100,IT
-nikesh,101,Accounts
-shubham,102,HR
-rohan,103,IT
+﻿date,product,revenue
+11-08-23,phone,100
+13-8-2023,tv,300
+12-08-23,phone,200
+13-8-2023,tablet,100
+14-8-2023,tv,400
+18-8-2023,tablet,100

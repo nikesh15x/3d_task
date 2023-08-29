@@ -11,5 +11,4 @@ def is_palindrome(s):
     except Exception as e:
         return e
 
-inputVal = input("Enter a string: ")
-print(is_palindrome(inputVal))
+print(is_palindrome("mom"))

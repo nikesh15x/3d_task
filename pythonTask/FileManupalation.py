@@ -1,6 +1,5 @@
 import os.path
 
-
 def copy_file(source_path, dest_path):
     try:
         if not isinstance(source_path, str) or not isinstance(dest_path, str):
