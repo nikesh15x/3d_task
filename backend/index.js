@@ -7,15 +7,16 @@ const cors = require("cors");
 
 
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:3000'
 }))
 
-//api's
-// const api = require('./Routes/index');
-// app.use('/', api);
+// api's
+const api = require('./Routes/index');
+app.use('/', api);
 
 
 app.get("/", (req, res) => {
