@@ -74,6 +74,7 @@ exports.login = async (req, res) => {
   createLog(methodName, modelName)
   try {
     const errors = await validationResult(req)
+    console.log(req.body);
     if (!errors.isEmpty()) {
       res.status(httpStatusCodes[400].code)
         .json(formResponse(httpStatusCodes[400].code, errors.array()));

@@ -17,7 +17,6 @@ const UserSchema = new Schema({
   },
   contact: {
     type: String,
-    unique: true
   },
   address: {
     type: String,
