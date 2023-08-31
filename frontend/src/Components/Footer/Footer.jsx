@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer items-center p-4 bg-gray-400 text-neutral-content pt-9">
       <div className="items-center grid-flow-col justify-start">
-        <img src="header.png " className="" alt="" srcset="" />
+        <img src="header.png " className="" alt=""  />
         <p>Copyright © 2023 - All right reserved</p>
       </div>
       <div className="">

@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import Ratings from "../Ratings";
+import Button from "../Button";
+import { UserContext } from "../../context/UserContext";
 
 function Card({ desc, img, name }) {
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  const { authenticated } = useContext(UserContext);
+
+
+  const handleBtn = () =>{
+    if(authenticated){
+      console.log("added to cart");
+      return
+      }
+      alert("Please Login");
+  }
+
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-2">
       <div className="card glass w-full card-compact">
@@ -18,35 +35,8 @@ function Card({ desc, img, name }) {
             topped with flavorful chicken sausage and red paprika.
           </p>
           <div className="flex items-center justify-between">
-            <div className="rating rating-md">
-              <input
-                type="radio"
-                name="rating-7"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-7"
-                className="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-7"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-7"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-7"
-                className="mask mask-star-2 bg-orange-400"
-              />
-            </div>
-            <button className="btn btn-primary btn-sm ">Buy Now!</button>
+            <Ratings quantity={5} selected={randomNumber(1, 4)} />
+            <Button title={"Buy Now!"} styles={" btn-sm "} func={handleBtn} />
           </div>
         </div>
       </div>
