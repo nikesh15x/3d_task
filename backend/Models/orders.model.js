@@ -11,6 +11,8 @@ const OrdersSchema = new Schema({
       name: String,
       quantity: Number,
       price: Number,
+      size: String,
+      total_price: Number
     }
   ],
   totalPrice: {

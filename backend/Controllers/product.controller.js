@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 const productModel = require("../Models/product.model");
 
 
-const modelName = "Auth Controller";
+const modelName = "Order Controller";
 
 exports.getAll = async (req, res) => {
   const methodName = "get_all"
