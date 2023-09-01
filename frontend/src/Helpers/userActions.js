@@ -19,7 +19,7 @@ export default {
   },
   logout: async () => {
     try {
-      let { data } = await httpClient.get('logout', { email: email, password: password });
+      let { data } = await httpClient.get('logout');
       return data;
     } catch (error) {
       return error

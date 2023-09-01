@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 function Alert({ type, message, hide, setHideErr }) {
-  const [style, setStyle] = useState("");
+  const [style, setStyle] = useState("hidden");
 
   useEffect(() => {
-    console.log(type, message, hide);
+    console.log(type, message, hide, "sad");
     if (hide) {
       setStyle("hidden");
     } else {

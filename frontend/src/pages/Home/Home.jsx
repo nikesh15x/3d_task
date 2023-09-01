@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Slider from "../../Components/Slider/Slider";
 import Button from "../../Components/Button";
 import Card from "../../Components/Pizza/Card";
 import TextWrapper from "../../Components/TextWrapper";
+import { UserContext } from "../../context/UserContext";
 
 function Home() {
+  const { products } = useContext(UserContext);
   let day = new Date().toLocaleString("en-us", { weekday: "long" });
-  let imgList = ["/s1.jpeg","s2.avif","s3.avif"];
+  let imgList = ["/s1.jpeg", "s2.avif", "s3.avif"];
 
   return (
     <div className="flex flex-col justify-center items-center space-y-6 scroll-smooth ">
@@ -35,10 +37,15 @@ function Home() {
           {TextWrapper("Top Picks", "text-2xl font-bold uppercase")}
         </div>
         <div className="flex flex-wrap gap-5 justify-center ">
-          {[1, 2, 3].map((e) => {
+          {products?.slice(0, 3)?.map((e, index) => {
             return (
-              <React.Fragment key={e}>
-                <Card key={e} />
+              <React.Fragment key={index}>
+                <Card
+                  img={e.img}
+                  name={e.name}
+                  desc={e.description}
+                  price={e.price}
+                />
               </React.Fragment>
             );
           })}

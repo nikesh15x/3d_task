@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Nav from "./Components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Login from "./pages/auth/Login";
@@ -13,6 +13,8 @@ import PushRoute from "./PushRoute";
 
 function App() {
   const { authenticated } = useContext(UserContext);
+
+  
 
   return (
     <>

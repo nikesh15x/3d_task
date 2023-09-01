@@ -68,7 +68,7 @@ function Login() {
       try {
         let data = await userActions.login(userData.email, userData.password);
         if (data?.response?.data?.status_code == 400) {
-          console.log("hello", data.response.data.data);
+          // console.log("hello", data.response.data.data);
           setHideErr({
             type: "error",
             hidden: false,
@@ -76,7 +76,6 @@ function Login() {
           });
           return;
         }
-        console.log(data);
         setUser({
           name: data.data.name,
           _id: data.data._id,

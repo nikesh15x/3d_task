@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import Card from "../../Components/Pizza/Card";
 import TextWrapper from "../../Components/TextWrapper";
+import { UserContext } from "../../context/UserContext";
 
 function Menu() {
+  const { products } = useContext(UserContext);
+
   return (
     <div className=" flex justify-center items-center flex-col gap-5 scroll-smooth">
       {" "}
@@ -11,10 +15,15 @@ function Menu() {
       </div>
       <div>
         <div className="flex flex-wrap gap-5 justify-center items-center mx-2 ">
-          {[1, 2, 3,6,7,8,5,34].map((e) => {
+          {products?.map((e, index) => {
             return (
-              <React.Fragment key={e}>
-                <Card key={e} />
+              <React.Fragment key={index}>
+                <Card
+                  img={e.img}
+                  name={e.name}
+                  desc={e.description}
+                  price={e.price}
+                />
               </React.Fragment>
             );
           })}
